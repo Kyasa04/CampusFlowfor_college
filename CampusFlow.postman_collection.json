@@ -1,0 +1,12 @@
+{
+  "info":{"name":"CampusFlow Backend","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable":[{"key":"baseUrl","value":"http://localhost:8080"}],
+  "item":[
+    {"name":"Health","request":{"method":"GET","url":"{{baseUrl}}/api/health"}},
+    {"name":"Create Complaint","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"studentId\": \"KL2026CS001\",\n  \"studentName\": \"ERP Student\",\n  \"category\": \"Internet / Wi-Fi\",\n  \"department\": \"IT Support\",\n  \"description\": \"Wi-Fi is not working in the classroom.\",\n  \"imageName\": \"\",\n  \"imageData\": \"\"\n}"},"url":"{{baseUrl}}/api/complaints"}},
+    {"name":"All Complaints","request":{"method":"GET","url":"{{baseUrl}}/api/complaints"}},
+    {"name":"Stats","request":{"method":"GET","url":"{{baseUrl}}/api/complaints/stats"}},
+    {"name":"Mark In Progress","request":{"method":"PATCH","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"status\":\"In Progress\"}"},"url":"{{baseUrl}}/api/complaints/CF-2026-001/status"}},
+    {"name":"Mark Resolved","request":{"method":"PATCH","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"status\":\"Resolved\"}"},"url":"{{baseUrl}}/api/complaints/CF-2026-001/status"}}
+  ]
+}

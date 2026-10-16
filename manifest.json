@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CampusFlow - Smart Campus Support",
+  "version": "1.0.0",
+  "description": "CampusFlow official issue management extension for the KL University ERP.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://newerp.kluniversity.in/*",
+    "http://localhost:8081/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://newerp.kluniversity.in/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "campusflow.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "CampusFlow"
+  }
+}

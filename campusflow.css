@@ -1,0 +1,1040 @@
+/* =========================================================
+   CAMPUSFLOW ROOT
+   Keeps the ERP sidebar and top toolbar visible.
+========================================================= */
+
+#cf-root {
+  position: fixed;
+
+  /*
+     These values are updated by content.js.
+     Default values match the current KL ERP layout.
+  */
+  left: var(--cf-left, 316px);
+  top: var(--cf-top, 43px);
+
+  right: 0;
+  bottom: 0;
+
+  width: auto;
+  height: auto;
+
+  display: none;
+
+  background: #ffffff;
+  color: #222222;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  box-sizing: border-box;
+
+  z-index: 2147483646;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   OPEN
+========================================================= */
+
+#cf-root.cf-open {
+  display: block;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   During CampusFlow reload, hide the ERP page underneath.
+   CampusFlow itself is allowed to remain visible.
+========================================================= */
+
+html.cf-restoring-campusflow body {
+  visibility: hidden !important;
+}
+
+html.cf-restoring-campusflow #cf-root {
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.cf-open {
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+#cf-root .cf-page {
+  width: 100%;
+  height: 100%;
+
+  background: #ffffff;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#cf-root .cf-header {
+  width: 100%;
+
+  min-height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 12px 22px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e2e2e2;
+
+  box-sizing: border-box;
+}
+
+
+#cf-root .cf-header > div {
+  width: 100%;
+}
+
+
+#cf-root .cf-header h1 {
+  margin: 0;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-header p {
+  margin: 4px 0 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+#cf-root .cf-body {
+  padding: 18px 24px 35px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+#cf-root .cf-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 16px;
+}
+
+
+#cf-root .cf-stat {
+  min-height: 76px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+
+#cf-root .cf-stat strong {
+  font-size: 22px;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-stat span {
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+#cf-root .cf-actions {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   ALL CAMPUSFLOW BUTTONS
+========================================================= */
+
+#cf-root .cf-btn {
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 10px 15px;
+
+  border: 1px solid #cfd8e3;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #222222;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+
+#cf-root .cf-btn:hover {
+  background: #f5f7fa;
+}
+
+
+#cf-root .cf-btn.primary {
+  background: #1976d2;
+
+  border-color: #1976d2;
+
+  color: #ffffff;
+}
+
+
+#cf-root .cf-btn.primary:hover {
+  background: #1565c0;
+
+  border-color: #1565c0;
+}
+
+
+#cf-root .cf-btn.secondary {
+  background: #ffffff;
+
+  border-color: #cfd8e3;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-btn.secondary:hover {
+  background: #f5f7fa;
+}
+
+
+#cf-root .cf-btn.active {
+  background: #1976d2;
+
+  border-color: #1976d2;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+#cf-root .cf-card {
+  width: 100%;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+
+#cf-root .cf-card-title {
+  margin-bottom: 18px;
+}
+
+
+#cf-root .cf-card-title h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-card-title p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+#cf-root .cf-welcome {
+  min-height: 210px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+}
+
+
+#cf-root .cf-welcome h2 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-welcome p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#cf-root .cf-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+
+#cf-root .cf-field {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+
+#cf-root .cf-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #444444;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+#cf-root select {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 7px 10px;
+
+  border: 1px solid #cfd8e3;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+
+#cf-root select:focus {
+  border-color: #1976d2;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+#cf-root textarea {
+  width: 100%;
+
+  min-height: 120px;
+
+  padding: 10px;
+
+  border: 1px solid #cfd8e3;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  resize: vertical;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+
+#cf-root textarea:focus {
+  border-color: #1976d2;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+#cf-root input[type="file"] {
+  width: 100%;
+
+  padding: 8px;
+
+  border: 1px solid #cfd8e3;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+#cf-root .cf-form-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+
+#cf-root .cf-form-buttons .cf-btn {
+  width: auto;
+
+  min-width: 160px;
+}
+
+
+/* =========================================================
+   COMPLAINT HEADER
+========================================================= */
+
+#cf-root .cf-complaint-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+
+#cf-root .cf-complaint-header strong {
+  display: block;
+
+  font-size: 15px;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-complaint-header small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+#cf-root .cf-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 90px;
+
+  padding: 6px 10px;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-sizing: border-box;
+}
+
+
+#cf-root .cf-status.submitted {
+  background: #fff3cd;
+
+  color: #856404;
+}
+
+
+#cf-root .cf-status.progress {
+  background: #dbeafe;
+
+  color: #1e40af;
+}
+
+
+#cf-root .cf-status.resolved {
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+#cf-root .cf-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+
+#cf-root .cf-info-grid > div {
+  padding: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e1e7ee;
+
+  border-radius: 4px;
+}
+
+
+#cf-root .cf-info-grid b {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+
+  color: #777777;
+}
+
+
+#cf-root .cf-info-grid span {
+  font-size: 13px;
+
+  color: #222222;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+#cf-root .cf-description {
+  margin-top: 7px;
+
+  padding: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e1e7ee;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+#cf-root .cf-complaint-image {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 300px;
+
+  margin-top: 18px;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   STATUS FLOW
+========================================================= */
+
+#cf-root .cf-status-flow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e2e2;
+}
+
+
+#cf-root .cf-status-flow > div {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px;
+
+  background: #f3f4f6;
+
+  border-radius: 4px;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+
+#cf-root .cf-status-flow > div.active {
+  background: #e8f1fb;
+
+  color: #1976d2;
+
+  font-weight: 600;
+}
+
+
+#cf-root .cf-status-flow span {
+  width: 23px;
+
+  height: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d9dee5;
+
+  color: #555555;
+
+  font-size: 11px;
+}
+
+
+#cf-root .cf-status-flow > div.active span {
+  background: #1976d2;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   STATUS ACTIONS
+========================================================= */
+
+#cf-root .cf-status-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+#cf-root .cf-status-btn {
+  min-height: 38px;
+
+  padding: 8px 14px;
+
+  border: 1px solid #1976d2;
+
+  border-radius: 4px;
+
+  background: #1976d2;
+
+  color: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+#cf-root .cf-status-btn:hover {
+  background: #1565c0;
+}
+
+
+#cf-root .cf-status-btn:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+
+#cf-root .cf-status-btn.resolved-btn {
+  background: #16803c;
+
+  border-color: #16803c;
+}
+
+
+#cf-root .cf-status-btn.resolved-btn:hover {
+  background: #126b32;
+}
+
+
+/* =========================================================
+   COMPLAINT LIST
+========================================================= */
+
+#cf-root .cf-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+#cf-root .cf-complaint {
+  padding: 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: background 0.15s;
+}
+
+
+#cf-root .cf-complaint:hover {
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+#cf-root .cf-notification {
+  padding: 14px 0;
+
+  border-bottom: 1px solid #e2e2e2;
+}
+
+
+#cf-root .cf-notification:last-child {
+  border-bottom: none;
+}
+
+
+#cf-root .cf-notification strong {
+  font-size: 13px;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-notification p {
+  margin: 6px 0;
+
+  font-size: 13px;
+
+  color: #444444;
+}
+
+
+#cf-root .cf-notification small {
+  font-size: 11px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+#cf-root .cf-empty {
+  min-height: 200px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #d9e0e7;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+}
+
+
+#cf-root .cf-empty h2 {
+  margin: 0 0 7px;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  color: #222222;
+}
+
+
+#cf-root .cf-empty p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #cf-root .cf-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  #cf-root .cf-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+  #cf-root .cf-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  #cf-root .cf-info-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  #cf-root .cf-status-flow {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+/* =========================================================
+   ERP MENU CAMPUSFLOW TEXT
+   Only small adjustment because the menu item itself
+   inherits the ERP's original styling.
+========================================================= */
+
+#cf-menu-item .cf-menu-icon {
+  display: inline-block;
+
+  margin-right: 5px;
+
+  font-size: 14px;
+}
+
+
+#cf-menu-item .cf-menu-text {
+  display: inline-block;
+}
